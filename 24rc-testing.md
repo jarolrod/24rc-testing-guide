@@ -38,9 +38,6 @@ To ensure we build in sqlite and gui support, pass the following options when co
 ```shell
 ./autogen.sh
 ./configure --with-gui=yes --with-sqlite=yes --enable-suppress-external-warnings
-# nproc does not exist on macOS so we create an alias for it if necessary
-if ! command -v nproc &> /dev/null; then alias nproc="sysctl -n hw.physicalcpu"; fi  
-make -j "$(($(nproc)+1))"
 ```
 
 For more information on compiling from source, here are some guides to compile Bitcoin Core for [UNIX/Linux](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md), [macOS](https://github.com/bitcoin/bitcoin/blob/master/doc/build-osx.md), [Windows](https://github.com/bitcoin/bitcoin/blob/master/doc/build-windows.md), [FreeBSD](https://github.com/bitcoin/bitcoin/blob/master/doc/build-freebsd.md), [NetBSD](https://github.com/bitcoin/bitcoin/blob/master/doc/build-netbsd.md), and [OpenBSD](https://github.com/bitcoin/bitcoin/blob/master/doc/build-openbsd.md).
